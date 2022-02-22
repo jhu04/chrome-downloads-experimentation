@@ -1,0 +1,14 @@
+{
+    "name": "Chrome Downloads Experimentation",
+    "description": "Chrome extension for experimenting with chrome.downloads",
+    "version": "1.0",
+    "author": "Jeffrey Hu",
+    "manifest_version": 3,
+    "permissions": ["downloads", "downloads.open"],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "action": {
+        "default_popup": "popup.html"
+    }
+}
