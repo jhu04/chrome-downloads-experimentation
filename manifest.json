@@ -4,6 +4,7 @@
     "version": "1.0",
     "author": "Jeffrey Hu",
     "manifest_version": 3,
+    "host_permissions": ["file:///*"],
     "permissions": ["downloads", "downloads.open"],
     "background": {
         "service_worker": "background.js"

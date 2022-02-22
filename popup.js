@@ -4,7 +4,7 @@ chrome.downloads.search({}, function(res) {
     let i = 0
     let cnt = 0
     
-    while (cnt <= 5)
+    while (cnt < 5)
     {
         if (res[i].error !== undefined)
         {
@@ -18,12 +18,13 @@ chrome.downloads.search({}, function(res) {
         // https://stackoverflow.com/questions/423376/how-to-get-the-file-name-from-a-full-path-using-javascript
         let filename = path.replace(/^.*[\\\/]/, '')
 
-        // <li><a href="file://${path}" target="_blank">${filename}</a></li> is not allowed because cannot access
-        // local files, but may be useful for input type=file
-        chrome.downloads.open(res[i].id)
+        // chrome.downloads.open(res[i].id)
 
         // opening.then(() => {console.log('opened')}, (error) => {console.log('error')})
-        downloads_list.innerHTML += `<li>${filename}</li>`
+
+        // <li><a href="file://${path}" target="_blank">${filename}</a></li> is not allowed because cannot access
+        // local files, but may be useful for input type=file
+        downloads_list.innerHTML += `<li><img src="file://${path}" target="_blank">${filename}</a></li>`
 
         ++i
         ++cnt
